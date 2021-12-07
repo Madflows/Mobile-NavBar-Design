@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000008;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title {
+  position: absolute;
+  color: #fff;
+  font-weight: 500;
+  bottom: 5%;
+  font-size: 14px;
+}
+
+.navigation {
+  width: 400px;
+  height: 80px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.navigation::before {
+  content: "Nav Bar";
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  color: antiquewhite;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border: 5px solid #fff;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background: #000000;
+  z-index: -10;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(20px);
+  transition: 0.5s;
+  position: relative;
+  z-index: 10;
+  width: 70px;
+  height: 70px;
+}
+
+.icon {
+  display: block;
+  font-size: 24px;
+}
+
+.text {
+  opacity: 0;
+}
+
+.links.active {
+  transform: translateY(-10px);
+}
+
+.links.active .icon {
+  transform: translateY(-15px);
+}
+
+.links.active .text {
+  opacity: 1;
+  transform: translateY(5px);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  background: #9cc6cc;
+  border-radius: 50%;
+  position: absolute;
+  left: 25px;
+  bottom: 45px;
+  border: 5px solid #000008;
+  transition: 0.5s ease-in-out;
+}
+
+.circle:before {
+  content: "";
+  position: absolute;
+  left: -20.5px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 1px -10px 0 #000008;
+}
+.circle:after {
+  content: "";
+  position: absolute;
+  right: -20.5px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: -1px -10px 0 #000008;
+}
+
+.links:nth-child(1).active ~ .circle {
+  transform: translateX(calc(70px * 0));
+}
+.links:nth-child(2).active ~ .circle {
+  transform: translateX(calc(70px * 1));
+}
+
+.links:nth-child(3).active ~ .circle {
+  transform: translateX(calc(70px * 2));
+}
+
+.links:nth-child(4).active ~ .circle {
+  transform: translateX(calc(70px * 3));
+}
+
+.links:nth-child(5).active ~ .circle {
+  transform: translateX(calc(70px * 4));
+}
